@@ -15,7 +15,9 @@ public class Main extends Application {
 			
 			primaryStage.setScene(scene);
 			
-			primaryStage.setTitle("Password Manager");
+			primaryStage.setTitle("Password Manager");  // Our idea is to create a password manager that stores different 
+			// passwords with a name for what account the password is for, which can then be accessed via one MASTER password
+			// and if the person gets the master password wrong he's not allowed to access any of the passwords. 
 			
 			primaryStage.show();
 		} catch(Exception e) {
