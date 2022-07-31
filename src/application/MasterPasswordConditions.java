@@ -2,7 +2,7 @@ package application;
 
 public class MasterPasswordConditions { // created a new class for the master password conditions (to check)
 	
-	
+	String masterPassword; // created a instance variable to = the password if its good enough 
 	
 
 	public MasterPasswordConditions(String passwordInput) {
@@ -65,7 +65,12 @@ public class MasterPasswordConditions { // created a new class for the master pa
 		
 		
 		
-		
+		if(validPassword = true) {
+			
+			masterPassword = passwordInput;  // if the password is valid, we may use it for the masterpassword 
+			
+			
+		}
 		
 		
 		
