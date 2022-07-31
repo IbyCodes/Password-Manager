@@ -24,6 +24,22 @@ public class MasterPasswordConditions { // created a new class for the master pa
 		}
 		
 		
+		for (char c: passwordInput.toCharArray()) {
+			
+			if (Character.isUpperCase(c)) {  // to count all uppercase letters
+				uppercaseCounter = uppercaseCounter + 1;
+			}
+			
+			if(Character.isLowerCase(c)) {  // to count all lowercase letters
+				lowercaseCounter = lowercaseCounter + 1;
+			}
+			
+			if(Character.isLetterOrDigit(c)) { // to count all special characters (not 100% sure if this works)
+				specialChar = specialChar + 1;
+			}
+			
+			
+		}
 		
 		
 		
