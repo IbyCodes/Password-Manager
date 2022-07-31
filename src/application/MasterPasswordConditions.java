@@ -44,6 +44,29 @@ public class MasterPasswordConditions { // created a new class for the master pa
 		
 		
 		
+		if (uppercaseCounter < 1) {
+			validPassword = false;  // password is not valid 
+			System.out.println("Your master password must contain at least 1 uppercase letter. But you inputted:"
+					+ ""+uppercaseCounter + "uppercase values.");}
+			
+			
+		if (lowercaseCounter < 1) {
+		validPassword = false;  // password is not valid 
+		System.out.println("Your master password must contain at least 1 lowercase letter. But you inputted:"
+		+ ""+lowercaseCounter + "lowercase values.");	
+		
+			
+		}
+		
+		if (specialChar < 1) {
+			validPassword = false;  // password is not valid 
+			System.out.println("Your master password must contain at least 1 special character. But you inputted:"
+					+ ""+ specialChar + " special values.");}
+		
+		
+		
+		
+		
 		
 		
 		
