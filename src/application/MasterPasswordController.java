@@ -1,8 +1,11 @@
 package application;
 
+import javafx.stage.Stage;
+
 public class MasterPasswordController { // created a new class for the master password conditions (to check)
 	
 	String masterPassword; // created a instance variable to = the password if its good enough 
+	public Stage applicationStage;
 	
 
 	public MasterPasswordController(String passwordInput) {

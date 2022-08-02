@@ -6,14 +6,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
-
+import java.io.FileInputStream;
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			
-			FXMLLoader loader = new FXMLLoader();
+			FXMLLoader loader = new FXMLLoader(); //needed to use the fxmlloader file we made 
 			VBox root = loader.load(new FileInputStream("src/application/MasterPasswordView.fxml"));
 			MasterPasswordController controller = (MasterPasswordController)loader.getController();
 			controller.applicationStage = primaryStage;
