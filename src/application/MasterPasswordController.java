@@ -1,11 +1,18 @@
 package application;
 
 import javafx.stage.Stage;
+import javafx.fxml.FXML;
+import javafx.scene.Scene;
+import javafx.scene.control.*; // * indicates import EVERYTHING from that package
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.event.ActionEvent;
 
 public class MasterPasswordController { // created a new class for the master password conditions (to check)
 	
 	String masterPassword; // created a instance variable to = the password if its good enough 
-	public Stage applicationStage;
+	Stage applicationStage;
 	
 
 	public MasterPasswordController(String passwordInput) {

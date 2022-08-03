@@ -12,12 +12,10 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			
 			FXMLLoader loader = new FXMLLoader(); //needed to use the fxmlloader file we made 
 			VBox root = loader.load(new FileInputStream("src/application/MasterPasswordView.fxml"));
 			MasterPasswordController controller = (MasterPasswordController)loader.getController();
 			controller.applicationStage = primaryStage;
-			
 			
 			Scene MasterPasswordScene = new Scene(root,400,400);
 			
