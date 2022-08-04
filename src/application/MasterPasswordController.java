@@ -19,6 +19,8 @@ public class MasterPasswordController { // created a new class for the master pa
 	
 	public Stage applicationStage;
 	
+	boolean validPassword = true; // will intially set validPassword as true unless then there's a problem w it
+	
 	  @FXML
 	  private ResourceBundle resources;
 
@@ -44,11 +46,8 @@ public class MasterPasswordController { // created a new class for the master pa
 
 	@FXML
 	void MasterPasswordCheck (ActionEvent event) {
-		
-		
-		String passwordInput = masterPassInit.toString();
-		
-		boolean validPassword = true;  // will intially set validPassword as true unless then there's a problem w it
+
+		String passwordInput = masterPassInit.getText();
 		
 		int uppercaseCounter = 0; // to count uppercase letters
 		
@@ -60,7 +59,7 @@ public class MasterPasswordController { // created a new class for the master pa
 		if (passwordInput.length()<8) {  // make sure the password length is at least 8 
 			validPassword = false;
 			MasterPassErrorText.setText("Your password is not long enough. Your password "
-					+ "should have a length of at least 8 characters. You inputted:"+passwordInput.length() 
+					+ "should have a length of at least 8 characters. You inputted: "+passwordInput.length() 
 					+ " characters.");
 		}
 		
@@ -75,7 +74,7 @@ public class MasterPasswordController { // created a new class for the master pa
 				lowercaseCounter = lowercaseCounter + 1;
 			}
 			
-			if(Character.isLetterOrDigit(c)) { // to count all special characters (not 100% sure if this works)
+			if(!Character.isLetterOrDigit(c)) { // to count all special characters (not 100% sure if this works)
 				specialChar = specialChar + 1;
 			}
 			
@@ -84,35 +83,42 @@ public class MasterPasswordController { // created a new class for the master pa
 
 		if (uppercaseCounter < 1) {
 			validPassword = false;  // password is not valid 
-			MasterPassErrorText.setText("Your master password must contain at least 1 uppercase letter. But you inputted:"
-					+ ""+uppercaseCounter + "uppercase values.");}
+			MasterPassErrorText.setText("Your master password must contain at least 1 uppercase letter. But you inputted: "
+					+ ""+uppercaseCounter + " uppercase values.");}
 			
 			
-		if (lowercaseCounter < 1) {
+		else if (lowercaseCounter < 1) {
 		validPassword = false;  // password is not valid 
-		MasterPassErrorText.setText("Your master password must contain at least 1 lowercase letter. But you inputted:"
-		+ ""+lowercaseCounter + "lowercase values.");	
+		MasterPassErrorText.setText("Your master password must contain at least 1 lowercase letter. But you inputted: "
+		+ ""+lowercaseCounter + " lowercase values.");	
 		
 			
 		}
 		
-		if (specialChar < 1) {
+		else if (specialChar < 1) {
 			validPassword = false;  // password is not valid 
-			MasterPassErrorText.setText("Your master password must contain at least 1 special character. But you inputted:"
+			MasterPassErrorText.setText("Your master password must contain at least 1 special character. But you inputted: "
 					+ ""+ specialChar + " special values.");}
 		
-		if(ReEnterMasterPass.toString() != passwordInput) {
+		else if(!ReEnterMasterPass.getText().equals(masterPassInit.getText())) {
 			validPassword = false;
 			MasterPassErrorText.setText("Your master password input is not the same as the re-entry. Please try again.");
-			
+			System.out.println(masterPassInit.getText()); // for debugging
+			System.out.println(ReEnterMasterPass.getText()); // for debugging
 		}
 		
-		if(validPassword = true) {
-			masterPassword = passwordInput;  // if the password is valid, we may use it for the masterpassword 
+		
+		else {
+			masterPassword = masterPassInit.getText();  // if the password is valid, we may use it for the masterpassword 
+			MasterPassErrorText.setText("Your master password has been set!");
+			
 
 		}
+		
+		}
+		
+		
 
-	}
 
 	
 	
