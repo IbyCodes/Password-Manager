@@ -11,9 +11,11 @@ import javafx.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 public class MasterPasswordController { // created a new class for the master password conditions (to check)
 	
 	String masterPassword; // created a instance variable to = the password if its good enough 
+	
 	public Stage applicationStage;
 	
 	  @FXML
@@ -26,25 +28,20 @@ public class MasterPasswordController { // created a new class for the master pa
 	  void initialize() {
 
 	    }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public MasterPasswordController(String passwordInput) {
+	  
+	  @FXML
+	 private PasswordField masterPassInit;
+
+	 @FXML
+	 private Button submitMasterPass;
+
+	 @FXML
+	 private PasswordField ReEnterMasterPass;
+
+
+	public void MasterPasswordCheck (String passwordInput) {
+		
+		passwordInput = masterPassInit.toString();
 		
 		boolean validPassword = true;  // will intially set validPassword as true unless then there's a problem w it
 		
@@ -79,10 +76,7 @@ public class MasterPasswordController { // created a new class for the master pa
 			
 			
 		}
-		
-		
-		
-		
+
 		if (uppercaseCounter < 1) {
 			validPassword = false;  // password is not valid 
 			System.out.println("Your master password must contain at least 1 uppercase letter. But you inputted:"
@@ -102,18 +96,22 @@ public class MasterPasswordController { // created a new class for the master pa
 			System.out.println("Your master password must contain at least 1 special character. But you inputted:"
 					+ ""+ specialChar + " special values.");}
 		
-		
-		
-		if(validPassword = true) {
-			
-			masterPassword = passwordInput;  // if the password is valid, we may use it for the masterpassword 
-			
+		if(ReEnterMasterPass.toString() != passwordInput) {
+			validPassword = false;
+			System.out.println("Your master password input is not the same as the re-entry. Please try again.");
 			
 		}
 		
-		
-		
-		
+		if(validPassword = true) {
+			masterPassword = passwordInput;  // if the password is valid, we may use it for the masterpassword 
+
+		}
+
 	}
 
+	
+	
+
+	
+	
 }

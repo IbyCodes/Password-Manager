@@ -2,8 +2,10 @@ package application;
 	
 import javafx.application.Application;
 import java.io.FileInputStream;
+
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 
@@ -13,7 +15,10 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(); //needed to use the fxmlloader file we made 
+			//loader.setClassLoader(getClass().getClassLoader()); // set the plugin's class loader
+			//loader.setLocation(getClass().getResource("src/application/MasterPasswordView.fxml"));
 			VBox root = loader.load(new FileInputStream("src/application/MasterPasswordView.fxml")); 
+			MasterPasswordController controller = (MasterPasswordController)loader.getController();
 			controller.applicationStage = primaryStage;  // GETTING A PROBLEM
 			
 			Scene scene = new Scene(root,400,400);
