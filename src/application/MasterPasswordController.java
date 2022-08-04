@@ -108,11 +108,11 @@ public class MasterPasswordController { // created a new class for the master pa
 		}
 		
 		
-		else {
-			masterPassword = masterPassInit.getText();  // if the password is valid, we may use it for the masterpassword 
+		else 
+		{
+			masterPassword = masterPassInit.getText();// if the password is valid, we may use it for the masterpassword 
+			validPassword = true;
 			MasterPassErrorText.setText("Your master password has been set!");
-			
-
 		}
 		
 		}
