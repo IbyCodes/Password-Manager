@@ -8,13 +8,42 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class MasterPasswordController { // created a new class for the master password conditions (to check)
 	
 	String masterPassword; // created a instance variable to = the password if its good enough 
-	Stage applicationStage;
+	public Stage applicationStage;
 	
+	  @FXML
+	  private ResourceBundle resources;
 
+	  @FXML
+	  private URL location;
+
+	  @FXML
+	  void initialize() {
+
+	    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public MasterPasswordController(String passwordInput) {
 		
 		boolean validPassword = true;  // will intially set validPassword as true unless then there's a problem w it
