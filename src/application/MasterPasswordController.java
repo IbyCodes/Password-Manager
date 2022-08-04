@@ -42,9 +42,11 @@ public class MasterPasswordController { // created a new class for the master pa
 	 private PasswordField ReEnterMasterPass;
 	 
 
-	public void MasterPasswordCheck (String passwordInput) {
+	@FXML
+	void MasterPasswordCheck (ActionEvent event) {
 		
-		passwordInput = masterPassInit.toString();
+		
+		String passwordInput = masterPassInit.toString();
 		
 		boolean validPassword = true;  // will intially set validPassword as true unless then there's a problem w it
 		
