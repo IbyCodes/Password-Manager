@@ -12,5 +12,11 @@ public class VerifyMasterPasswordController
 
     @FXML
     private Button VerifyMasterPasswordButton;
+    
+    @FXML
+    void verifyPassword()
+    {
+    	
+    }
 
 }

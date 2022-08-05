@@ -17,7 +17,7 @@ public class Main extends Application {
 			FXMLLoader loader = new FXMLLoader(); //needed to use the fxmlloader file we made 
 			//loader.setClassLoader(getClass().getClassLoader()); // set the plugin's class loader
 			//loader.setLocation(getClass().getResource("src/application/MasterPasswordView.fxml"));
-			VBox root = loader.load(new FileInputStream("src/application/MasterPasswordView.fxml")); 
+			Parent root = loader.load(new FileInputStream("src/application/MasterPasswordView.fxml"));  // changed VBox root to Parent Root so that we can connect the next scene 
 			MasterPasswordController controller = (MasterPasswordController)loader.getController();
 			controller.applicationStage = primaryStage;  // GETTING A PROBLEM
 			
