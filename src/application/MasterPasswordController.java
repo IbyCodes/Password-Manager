@@ -115,6 +115,11 @@ public class MasterPasswordController { // created a new class for the master pa
 		
 		}
 		
+	
+	public String getMasterPassword () {  // to get the master password in any other class
+		return masterPassword;
+		
+	}
 		
 
 
