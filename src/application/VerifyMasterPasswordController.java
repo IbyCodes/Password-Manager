@@ -15,6 +15,11 @@ public class VerifyMasterPasswordController extends MasterPasswordController {
     private Button VerifyMasterPasswordButton;
     
     @FXML
+    void verifyPassword()
+    {
+    	
+    }
+
     private Text UnlockManagerPassError;
     
     
