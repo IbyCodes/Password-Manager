@@ -137,9 +137,14 @@ public class MasterPasswordController
 			masterPassword = masterPassInit.getText();  // if the password is valid, we may use it for the masterpassword 
 			validPassword = true;
 			MasterPassErrorText.setText("Your master password has been set!");
-	
 		}
 		
+		}
+		
+	
+	public String getMasterPassword () {  // to get the master password in any other class
+		return masterPassword;
+
 	}
 		
 }
