@@ -39,7 +39,7 @@ public class AccessUsernameAndPasswordController {
 			
 			HBox newPasswordScene = new HBox();
 			if (rowCounter == 0) {
-			Label websiteLabel = new Label("Enter the website of the password");
+			Label websiteLabel = new Label("Enter the website of the password: ");
 			TextField websiteTextfield = new TextField();
 			newPasswordTextFields.add(websiteTextfield);
 			newPasswordScene.getChildren().addAll(websiteLabel, websiteTextfield);
@@ -47,7 +47,7 @@ public class AccessUsernameAndPasswordController {
 			
 			}
 			else if(rowCounter == 1) {
-				Label usernameLabel = new Label("Enter the username of the site");
+				Label usernameLabel = new Label("Enter the username of the site: ");
 				TextField usernameTextfield = new TextField();
 				newPasswordTextFields.add(usernameTextfield);
 				newPasswordScene.getChildren().addAll(usernameLabel, usernameTextfield);
@@ -55,7 +55,7 @@ public class AccessUsernameAndPasswordController {
 			}
 			
 			else if(rowCounter == 2) {
-				Label passwordLabel = new Label("Enter the password of the site to save");
+				Label passwordLabel = new Label("Enter the password of the site to save: ");
 				TextField passwordTextfield = new TextField();
 				newPasswordTextFields.add(passwordTextfield);
 				newPasswordScene.getChildren().addAll(passwordLabel, passwordTextfield);
