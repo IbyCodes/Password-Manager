@@ -50,7 +50,7 @@ public class MasterPasswordController
 	 @FXML
 	 void PasswordCheck() throws IOException   // action method created for "Next" button                                                  
 	 {
-		 if(validPassword == false) 					// checks if the boolean variable is False that is if there are errors in setting the master password  
+		 if(validPassword == false || masterPassword == null) 					// checks if the boolean variable is False that is if there are errors in setting the master password  
 		 {
 			 MasterPassErrorText.setText("Your master password has not been set yet!");
 		 }
