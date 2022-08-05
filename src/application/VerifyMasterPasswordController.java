@@ -25,8 +25,14 @@ public class VerifyMasterPasswordController extends MasterPasswordController {
     	String inputToCheck = VerifyMasterPasswordField.getText();
     	if(inputToCheck != getMasterPassword()) {	
     		
+    		UnlockManagerPassError.setText("The master password input is incorrect. Try again.");
+    		
     	}
     	
+    	else {
+    		; // here we can switch the scene to scene AccessUsernameAndPasswordView
+    		
+    	}
     	
     	
     	
