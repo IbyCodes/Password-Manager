@@ -44,6 +44,7 @@ public class AccessUsernameAndPasswordController {
 			newPasswordTextFields.add(websiteTextfield);
 			newPasswordScene.getChildren().addAll(websiteLabel, websiteTextfield);
 			allRows.getChildren().add(newPasswordScene);
+			rowCounter ++;
 			
 			}
 			else if(rowCounter == 1) {
@@ -52,6 +53,7 @@ public class AccessUsernameAndPasswordController {
 				newPasswordTextFields.add(usernameTextfield);
 				newPasswordScene.getChildren().addAll(usernameLabel, usernameTextfield);
 				allRows.getChildren().add(newPasswordScene);
+				rowCounter ++;
 			}
 			
 			else if(rowCounter == 2) {
@@ -60,6 +62,7 @@ public class AccessUsernameAndPasswordController {
 				newPasswordTextFields.add(passwordTextfield);
 				newPasswordScene.getChildren().addAll(passwordLabel, passwordTextfield);
 				allRows.getChildren().add(newPasswordScene);
+				rowCounter ++;
 		}
 		}
     	
@@ -69,6 +72,7 @@ public class AccessUsernameAndPasswordController {
     	
     	Label passwordInputErrorLabel = new Label();
     	allRows.getChildren().add(passwordInputErrorLabel);
+    	
     	//Scene quizScene = new Scene(allRows); // still need to figure out how to return to previous scene
     	// applicationStage.setScene(quizScene);  // still need to figure out how to return to previous scene
 
