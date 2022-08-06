@@ -75,19 +75,7 @@ public class MasterPasswordController
 		
 		int specialChar = 0;  // to count all special characters
 		
-		if (passwordInput.length()<8) 
-		{  // make sure the password length is at least 8 
-			validPassword = false;
-			MasterPassErrorText.setText("Your password is not long enough. Your password "
-					+ "should have a length of at least 8 characters. You inputted: "+passwordInput.length() 
-					+ " characters.");
-		}
-		
-		if(passwordInput.length()==0)
-		{
-			validPassword = false;
-		}
-		
+	
 		for (char c: passwordInput.toCharArray())
 		{
 			
@@ -104,8 +92,24 @@ public class MasterPasswordController
 			}
 			
 		}
+		
+		
+		if (passwordInput.length()<8) 
+		{  // make sure the password length is at least 8 
+			validPassword = false;
+			MasterPassErrorText.setText("Your password is not long enough. Your password "
+					+ "should have a length of at least 8 characters. You inputted: "+passwordInput.length() 
+					+ " characters.");
+		}
+		
+		else if(passwordInput.length()==0)
+		{
+			validPassword = false;
+			MasterPassErrorText.setText("You didn't input anything for the master password! Please set a master password first.");
+		}
+		
 
-		if (uppercaseCounter < 1) 
+		else if (uppercaseCounter < 1) 
 		{
 			validPassword = false;  // password is not valid 
 			MasterPassErrorText.setText("Your master password must contain at least 1 uppercase letter. But you inputted: "
@@ -132,6 +136,7 @@ public class MasterPasswordController
 			System.out.println(masterPassInit.getText()); // for debugging
 			System.out.println(ReEnterMasterPass.getText()); // for debugging
 		}
+
 		else
 		{
 			masterPassword = masterPassInit.getText();  // if the password is valid, we may use it for the masterpassword 
