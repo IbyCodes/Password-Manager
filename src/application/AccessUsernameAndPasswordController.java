@@ -1,6 +1,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -45,6 +46,7 @@ public class AccessUsernameAndPasswordController {
 			newPasswordScene.getChildren().addAll(websiteLabel, websiteTextfield);
 			allRows.getChildren().add(newPasswordScene);
 			rowCounter ++;
+				
 			
 			}
 			else if(rowCounter == 1) {
@@ -73,8 +75,12 @@ public class AccessUsernameAndPasswordController {
     	Label passwordInputErrorLabel = new Label();
     	allRows.getChildren().add(passwordInputErrorLabel);
     	
+    	
+    	
     	//Scene quizScene = new Scene(allRows); // still need to figure out how to return to previous scene
     	// applicationStage.setScene(quizScene);  // still need to figure out how to return to previous scene
+    	
+    	
 
     }
 

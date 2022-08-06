@@ -15,10 +15,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MasterPasswordController
+public class MasterPasswordController 
 { // created a new class for the master password conditions (to check)
 	
-	 String masterPassword; // created a instance variable to = the password if its good enough 
+	 private String masterPassword; // created a instance variable to = the password if its good enough 
 	
 	 public Stage applicationStage;
 	
@@ -58,9 +58,9 @@ public class MasterPasswordController
 		 {
 			 Parent root = FXMLLoader.load(getClass().getResource("VerifyMasterPasswordView.fxml"));  // changed the VBox root to Parent root to load the FXML document for the next scene
 			 Scene password = new Scene(root);    // creates a new scene
-			 Stage stage = new Stage();			// created a new stage 
-			 stage.setScene(password);
-			 stage.show();						// makes the new scene visible on the screen
+			 //Stage stage = new Stage();			// created a new stage 
+			applicationStage.setScene(password);
+			applicationStage.show();						// makes the new scene visible on the screen
 		 }
 	 }
 	 @FXML
@@ -144,12 +144,15 @@ public class MasterPasswordController
 			MasterPassErrorText.setText("Your master password has been set!");
 		}
 		
+		
+		
+		}
+	 
+		public String getMasterPassword() {
+			return masterPassword;
 		}
 		
-	
-	public String getMasterPassword () {  // to get the master password in any other class
-		return masterPassword;
+		
 
-	}
 		
 }
