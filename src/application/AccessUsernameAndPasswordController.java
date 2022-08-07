@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -61,8 +62,41 @@ public class AccessUsernameAndPasswordController {
 
     }
     	
+    	
+    	
+   
+    	
+    }
+    
+    @FXML
+    public void clickedOnAPassword() { // source: https://imgur.com/a/L99ij8N
+    	
+    	
+    	
+    	int listIndex = 0;
+    	
+    	while (!(listIndex<0)) { // i want the listIndex to keep reseting every time something on the list is clicked
+
+    	
+    	listIndex = ListOfPasswords.getSelectionModel().getSelectedIndex();
+
+    	System.out.println("Username: " + data.getListOfUsernames().get(listIndex));
+    	
+    	System.out.println("Password: " + data.getListOfPasswords().get(listIndex));
+    	
+    	
+    	listIndex = -1;
+    	
+    	
+ 
+    	
+    	
+    	
+  
+
     }
 
+    }
 
 	
     

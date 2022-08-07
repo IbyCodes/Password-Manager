@@ -61,7 +61,7 @@ public class SavingInformationController extends AccessUsernameAndPasswordContro
 		websiteToSave = savingWebsite.getText();
 		data.setListOfWebsites(websiteToSave);
 		
-		usernameToSave = savingPassword.getText(); 
+		usernameToSave = savingUsername.getText(); 
 		data.setListOfUsernames(usernameToSave);
 		
 		
