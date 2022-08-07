@@ -35,6 +35,9 @@ public class SavingInformationController {
 	@FXML
 	private Button DoneButton;
 	
+    @FXML
+    private TextField savingWebsite;
+	
 	@FXML  
 	void showPassword(ActionEvent event) throws IOException {
 		

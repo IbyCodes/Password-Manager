@@ -10,23 +10,33 @@
 
 <VBox prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SavingInformationController">
    <children>
-      <Label text="ADD INFORMATION" translateX="108.5" translateY="25.0">
+      <Label text="ADD INFORMATION" translateX="108.5" translateY="15.0">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
+      <Label text="Website" translateX="30.0" translateY="25.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="savingWebsite" prefHeight="25.0" prefWidth="318.0">
+         <VBox.margin>
+            <Insets left="120.0" right="120.0" />
+         </VBox.margin>
+      </TextField>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label prefHeight="30.0" prefWidth="94.0" text="Username" translateX="25.0" translateY="60.0">
+            <Label prefHeight="30.0" prefWidth="94.0" text="Username" translateX="25.0" translateY="20.0">
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <TextField fx:id="savingUsername" translateX="25.0" translateY="63.0" />
+            <TextField fx:id="savingUsername" prefHeight="25.0" prefWidth="164.0" translateX="25.0" translateY="25.0" />
          </children>
       </HBox>
       <HBox prefHeight="53.0" prefWidth="400.0">
          <children>
-            <Label text="Password" translateX="27.0" translateY="20.0">
+            <Label text="Password" translateX="27.0" translateY="-10.0">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -34,16 +44,16 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <PasswordField fx:id="savingPassword" prefHeight="25.0" prefWidth="163.0" translateX="35.0" translateY="23.0" />
+            <PasswordField fx:id="savingPassword" prefHeight="25.0" prefWidth="163.0" translateX="35.0" translateY="-10.0" />
          </children>
       </HBox>
       <HBox prefHeight="23.0" prefWidth="400.0">
          <children>
-            <Button fx:id="showButton" mnemonicParsing="false" onAction="#showPassword" prefHeight="25.0" prefWidth="53.0" text="show" translateX="43.0" />
-            <TextArea fx:id="passwordRevealed" prefHeight="25.0" prefWidth="162.0" translateX="66.0" />
+            <Button fx:id="showButton" mnemonicParsing="false" onAction="#showPassword" prefHeight="25.0" prefWidth="53.0" text="show" translateX="43.0" translateY="-20.0" />
+            <TextArea fx:id="passwordRevealed" prefHeight="25.0" prefWidth="162.0" translateX="66.0" translateY="-20.0" />
          </children>
       </HBox>
-      <Button fx:id="DoneButton" layoutX="400.0" layoutY="400.0" mnemonicParsing="false" onAction="#valueSaved" prefHeight="25.0" prefWidth="55.0" text="Done" translateX="172.5" translateY="20.0">
+      <Button fx:id="DoneButton" layoutX="400.0" layoutY="400.0" mnemonicParsing="false" onAction="#valueSaved" prefHeight="25.0" prefWidth="55.0" text="Done" translateX="172.5" translateY="-10.0">
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </VBox.margin>
