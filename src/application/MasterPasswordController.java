@@ -15,10 +15,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MasterPasswordController
+public class MasterPasswordController 
 { // created a new class for the master password conditions (to check)
 	
-	 String masterPassword; // created a instance variable to = the password if its good enough 
+	 private String masterPassword; // created a instance variable to = the password if its good enough 
 	
 	 public Stage applicationStage;
 	
@@ -63,7 +63,7 @@ public class MasterPasswordController
 			 applicationStage.setTitle("VerifyMasterPassword");
 			 applicationStage.show();			// makes the new scene visible on the screen
 			 
-			
+
 		 }
 	 }
 	 
@@ -148,13 +148,18 @@ public class MasterPasswordController
 			MasterPassErrorText.setText("Your master password has been set!");
 		}
 		
+		
+		
 		}
+	 
 	
 	public String getMasterPassword() {  // to get the master password in any other class
 		System.out.println(masterPassword);
 		return masterPassword;
 
 	}
+	
+
 	
 		
 }
