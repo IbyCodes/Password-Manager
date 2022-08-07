@@ -12,7 +12,12 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+
 public class VerifyMasterPasswordController {
+	
+	
+
+public class VerifyMasterPasswordController extends MasterPasswordController {
 	
 	
     @FXML
@@ -26,6 +31,7 @@ public class VerifyMasterPasswordController {
     {
     	
     }
+
     
     @FXML
     private Text UnlockManagerPassError;
@@ -35,12 +41,18 @@ public class VerifyMasterPasswordController {
     @FXML
     void VerifyMasterPass(ActionEvent event) throws IOException {
     	
+    	applicationStage.getScene();
+    	
+    	
     	String inputToCheck = VerifyMasterPasswordField.getText();
     	
     	
 		if(inputToCheck.equals(Main.controller.getMasterPassword())) { // comparing created masterPassword to the verifyMasterPassword	
     		
-    		UnlockManagerPassError.setText("The master password input is incorrect. Try again."); 
+    	UnlockManagerPassError.setText("The master password input is incorrect. Try again."); 
+    	System.out.println(inputToCheck);
+    	System.out.println(getMasterPassword());
+
 
     	}
     	
