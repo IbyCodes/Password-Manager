@@ -14,7 +14,6 @@ public class Main extends Application {
 	
 	public static MasterPasswordController controller;  // to get access of the String masterPassword over all other controllers
 	
-	
 	@Override
 	public void start(Stage primaryStage) {
 		try {

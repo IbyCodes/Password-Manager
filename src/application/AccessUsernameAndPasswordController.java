@@ -1,11 +1,14 @@
 package application;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,14 +23,27 @@ public class AccessUsernameAndPasswordController {
 	Stage applicationStage;
 
     @FXML
-    private Button EditPasswordButton;
-
-    @FXML
     private Button AddPasswordButton;
 
     @FXML
     private ListView<?> ListOfPasswords;
     
+    
+    @FXML
+    void AddNewPassword(ActionEvent event) throws IOException {
+    	
+    	Parent root = FXMLLoader.load(getClass().getResource("SavingInformationView.fxml"));
+    	Scene addInformation = new Scene(root);
+    	
+    	Main.controller.applicationStage.setScene(addInformation);
+    	Main.controller.applicationStage.setTitle("Saving Username and Password");
+    	
+    }
+    
+    
+    
+    /*
+
     @FXML
     void AddNewPassword(ActionEvent event) {
 		Scene mainScene = applicationStage.getScene();
@@ -83,6 +99,6 @@ public class AccessUsernameAndPasswordController {
     	
 
     }
-
+	*/
 
 }
