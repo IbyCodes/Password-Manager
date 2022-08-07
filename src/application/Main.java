@@ -23,7 +23,7 @@ public class Main extends Application {
 			//loader.setLocation(getClass().getResource("src/application/MasterPasswordView.fxml"));
 			Parent root = loader.load(new FileInputStream("src/application/MasterPasswordView.fxml"));  // changed VBox root to Parent Root so that we can connect the next scene 
 			controller = (MasterPasswordController)loader.getController();
-			controller.applicationStage = primaryStage;  // GETTING A PROBLEM
+			controller.applicationStage = primaryStage;  
 			
 			Scene scene = new Scene(root,400,400);
 			
