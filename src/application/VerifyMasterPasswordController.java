@@ -1,13 +1,20 @@
 package application;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
-public class VerifyMasterPasswordController extends MasterPasswordController {
-
+public class VerifyMasterPasswordController {
+	
+	
     @FXML
     private PasswordField VerifyMasterPasswordField;
 
@@ -19,30 +26,36 @@ public class VerifyMasterPasswordController extends MasterPasswordController {
     {
     	
     }
-
+    
+    @FXML
     private Text UnlockManagerPassError;
     
     
     
     @FXML
-    void VerifyMasterPass(ActionEvent event) {
+    void VerifyMasterPass(ActionEvent event) throws IOException {
     	
     	String inputToCheck = VerifyMasterPasswordField.getText();
-    	if(inputToCheck != getMasterPassword()) {	
+    	
+    	
+		if(inputToCheck.equals(Main.controller.getMasterPassword())) { // comparing created masterPassword to the verifyMasterPassword	
     		
-    		UnlockManagerPassError.setText("The master password input is incorrect. Try again.");
-    		
+    		UnlockManagerPassError.setText("The master password input is incorrect. Try again."); 
+
     	}
     	
     	else {
-    		; // here we can switch the scene to scene AccessUsernameAndPasswordView
+    		
+    		Parent root = FXMLLoader.load(getClass().getResource("AccessUsernameAndPasswordView.fxml"));
+    		Scene accessGranted = new Scene(root);
+    		Stage settingUpStage = new Stage();
+    		settingUpStage.setScene(accessGranted);
+    		settingUpStage.show();
     		
     	}
     	
     	
-    	
-
     }
-    
 
+    
 }

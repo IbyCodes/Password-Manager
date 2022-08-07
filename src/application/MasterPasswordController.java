@@ -56,13 +56,16 @@ public class MasterPasswordController
 		 }
 		 else										// if the password has been set and there are no errors we move to switching the scenes.
 		 {
+			 
 			 Parent root = FXMLLoader.load(getClass().getResource("VerifyMasterPasswordView.fxml"));  // changed the VBox root to Parent root to load the FXML document for the next scene
 			 Scene password = new Scene(root);    // creates a new scene
-			 Stage stage = new Stage();			// created a new stage 
-			 stage.setScene(password);
-			 stage.show();						// makes the new scene visible on the screen
+			 applicationStage.setScene(password);
+			 applicationStage.show();			// makes the new scene visible on the screen
+			 
+			
 		 }
 	 }
+	 
 	 @FXML
 	 void MasterPasswordCheck (ActionEvent event)
 	 {
@@ -145,11 +148,12 @@ public class MasterPasswordController
 		}
 		
 		}
-		
 	
-	public String getMasterPassword () {  // to get the master password in any other class
+	public String getMasterPassword() {  // to get the master password in any other class
+		System.out.println(masterPassword);
 		return masterPassword;
 
 	}
+	
 		
 }
