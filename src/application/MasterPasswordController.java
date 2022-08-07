@@ -60,6 +60,7 @@ public class MasterPasswordController
 			 Parent root = FXMLLoader.load(getClass().getResource("VerifyMasterPasswordView.fxml"));  // changed the VBox root to Parent root to load the FXML document for the next scene
 			 Scene password = new Scene(root);    // creates a new scene
 			 applicationStage.setScene(password);
+			 applicationStage.setTitle("VerifyMasterPassword");
 			 applicationStage.show();			// makes the new scene visible on the screen
 			 
 
