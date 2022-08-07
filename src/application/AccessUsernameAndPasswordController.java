@@ -22,7 +22,7 @@ public class AccessUsernameAndPasswordController {
 
 	Stage applicationStage;
 	
-	
+	int counter = 0;
 	
 	DataSingleton data = DataSingleton.getInstance();
 
@@ -49,8 +49,18 @@ public class AccessUsernameAndPasswordController {
     @FXML
     void refreshPage(ActionEvent event) {
     	
+    	counter ++ ;
+    	
+    	if (counter>1) {
+    		System.out.println("You already refreshed the page to its most updated values.");
+    	}
+    	
+    	else {
     	ListOfPasswords.getItems().addAll(data.getListOfWebsites());
+    	
 
+    }
+    	
     }
 
 
