@@ -7,10 +7,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
+
 
 
 public class Main extends Application {
+	
+	public static MasterPasswordController controller;  // to get access of the String masterPassword over all other controllers
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -18,8 +21,8 @@ public class Main extends Application {
 			//loader.setClassLoader(getClass().getClassLoader()); // set the plugin's class loader
 			//loader.setLocation(getClass().getResource("src/application/MasterPasswordView.fxml"));
 			Parent root = loader.load(new FileInputStream("src/application/MasterPasswordView.fxml"));  // changed VBox root to Parent Root so that we can connect the next scene 
-			MasterPasswordController controller = (MasterPasswordController)loader.getController();
-			controller.applicationStage = primaryStage;  // GETTING A PROBLEM
+			controller = (MasterPasswordController)loader.getController();
+			controller.applicationStage = primaryStage;  
 			
 			Scene scene = new Scene(root,400,400);
 			

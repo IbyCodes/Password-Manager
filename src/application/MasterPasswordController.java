@@ -1,3 +1,5 @@
+
+
 package application;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
@@ -50,19 +52,22 @@ public class MasterPasswordController
 	 @FXML
 	 void PasswordCheck() throws IOException   // action method created for "Next" button                                                  
 	 {
-		 if(validPassword == false) 					// checks if the boolean variable is False that is if there are errors in setting the master password  
+		 if(validPassword == false || masterPassword == null) 					// checks if the boolean variable is False that is if there are errors in setting the master password  
 		 {
 			 MasterPassErrorText.setText("Your master password has not been set yet!");
 		 }
 		 else										// if the password has been set and there are no errors we move to switching the scenes.
 		 {
+			 
 			 Parent root = FXMLLoader.load(getClass().getResource("VerifyMasterPasswordView.fxml"));  // changed the VBox root to Parent root to load the FXML document for the next scene
 			 Scene password = new Scene(root);    // creates a new scene
-			 Stage stage = new Stage();			// created a new stage 
-			 stage.setScene(password);
-			 stage.show();						// makes the new scene visible on the screen
+			 applicationStage.setScene(password);
+			 applicationStage.show();			// makes the new scene visible on the screen
+			 
+			
 		 }
 	 }
+	 
 	 @FXML
 	 void MasterPasswordCheck (ActionEvent event)
 	 {
@@ -75,19 +80,7 @@ public class MasterPasswordController
 		
 		int specialChar = 0;  // to count all special characters
 		
-		if (passwordInput.length()<8) 
-		{  // make sure the password length is at least 8 
-			validPassword = false;
-			MasterPassErrorText.setText("Your password is not long enough. Your password "
-					+ "should have a length of at least 8 characters. You inputted: "+passwordInput.length() 
-					+ " characters.");
-		}
-		
-		if(passwordInput.length()==0)
-		{
-			validPassword = false;
-		}
-		
+	
 		for (char c: passwordInput.toCharArray())
 		{
 			
@@ -104,8 +97,24 @@ public class MasterPasswordController
 			}
 			
 		}
+		
+		
+		if (passwordInput.length()<8) 
+		{  // make sure the password length is at least 8 
+			validPassword = false;
+			MasterPassErrorText.setText("Your password is not long enough. Your password "
+					+ "should have a length of at least 8 characters. You inputted: "+passwordInput.length() 
+					+ " characters.");
+		}
+		
+		else if(passwordInput.length()==0)
+		{
+			validPassword = false;
+			MasterPassErrorText.setText("You didn't input anything for the master password! Please set a master password first.");
+		}
+		
 
-		if (uppercaseCounter < 1) 
+		else if (uppercaseCounter < 1) 
 		{
 			validPassword = false;  // password is not valid 
 			MasterPassErrorText.setText("Your master password must contain at least 1 uppercase letter. But you inputted: "
@@ -132,6 +141,7 @@ public class MasterPasswordController
 			System.out.println(masterPassInit.getText()); // for debugging
 			System.out.println(ReEnterMasterPass.getText()); // for debugging
 		}
+
 		else
 		{
 			masterPassword = masterPassInit.getText();  // if the password is valid, we may use it for the masterpassword 
@@ -140,11 +150,12 @@ public class MasterPasswordController
 		}
 		
 		}
-		
 	
-	public String getMasterPassword () {  // to get the master password in any other class
+	public String getMasterPassword() {  // to get the master password in any other class
+		System.out.println(masterPassword);
 		return masterPassword;
 
 	}
+	
 		
 }

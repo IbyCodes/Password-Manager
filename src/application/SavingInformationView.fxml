@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="ADD INFORMATION" translateX="100.0" translateY="20.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Username : -" translateX="10.0" translateY="50.0">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <TextField translateX="15.0" translateY="54.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Password : -" translateX="15.0" translateY="50.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField translateX="20.0" translateY="54.0" />
+         </children>
+      </HBox>
+      <Button layoutX="400.0" layoutY="400.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="96.0" text="Done " translateX="130.0" translateY="20.0">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <font>
+            <Font size="22.0" />
+         </font></Button>
+   </children>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+</VBox>
