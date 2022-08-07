@@ -43,6 +43,7 @@ public class VerifyMasterPasswordController {
     		Scene accessGranted = new Scene(root);
     		
     		Main.controller.applicationStage.setScene(accessGranted);
+    		Main.controller.applicationStage.setTitle("AccessUsernameAndPassword");
     	}
     	
     	else {
