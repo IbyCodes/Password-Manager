@@ -19,26 +19,66 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class AccessUsernameAndPasswordController {
-	
+
 	Stage applicationStage;
+	
+	
+	
+	DataSingleton data = DataSingleton.getInstance();
 
     @FXML
     private Button AddPasswordButton;
 
     @FXML
-    private ListView<?> ListOfPasswords;
+    public ListView<String> ListOfPasswords;
     
+
     
     @FXML
     void AddNewPassword(ActionEvent event) throws IOException {
     	
+    	
     	Parent root = FXMLLoader.load(getClass().getResource("SavingInformationView.fxml"));
     	Scene addInformation = new Scene(root);
-    	
     	Main.controller.applicationStage.setScene(addInformation);
     	Main.controller.applicationStage.setTitle("Saving Username and Password");
     	
     }
+    
+    
+    @FXML
+    void refreshPage(ActionEvent event) {
+    	
+    	ListOfPasswords.getItems().addAll(data.getListOfWebsites());
+
+    }
+
+
+	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
