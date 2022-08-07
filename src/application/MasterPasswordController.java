@@ -151,10 +151,6 @@ public class MasterPasswordController
 		
 		}
 	 
-		public String getMasterPassword() {
-			return masterPassword;
-		}
-
 	
 	public String getMasterPassword() {  // to get the master password in any other class
 		System.out.println(masterPassword);
