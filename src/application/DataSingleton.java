@@ -16,6 +16,8 @@ public class DataSingleton {
 	
 	private List<String> listOfWebsites =  new ArrayList<>();
 	
+	private int listIndex;
+	
 
 	private DataSingleton() {
 		// TODO Auto-generated constructor stub
@@ -52,6 +54,14 @@ public class DataSingleton {
 	
 	public List<String> getListOfUsernames() {
 		return listOfUsernames;
+	}
+
+	public int getListIndex() {
+		return listIndex;
+	}
+
+	public void setListIndex(int listIndex) {
+		this.listIndex = listIndex;
 	}
 	
 }

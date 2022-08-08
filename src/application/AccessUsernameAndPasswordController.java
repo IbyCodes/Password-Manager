@@ -19,7 +19,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class AccessUsernameAndPasswordController {
+public class AccessUsernameAndPasswordController extends ShowUsernameAndPasswordController {
 
 	Stage applicationStage;
 	
@@ -69,23 +69,23 @@ public class AccessUsernameAndPasswordController {
     }
     
     @FXML
-    public void clickedOnAPassword() { // source: https://imgur.com/a/L99ij8N
+    public void clickedOnAPassword() throws IOException { // source: https://imgur.com/a/L99ij8N
     	
     	
     	
-    	int listIndex = 0;
+    	int countingIndex = 0;
     	
-    	while (!(listIndex<0)) { // i want the listIndex to keep reseting every time something on the list is clicked
+    	while (!(countingIndex<0)) { // i want the listIndex to keep reseting every time something on the list is clicked
 
     	
-    	listIndex = ListOfPasswords.getSelectionModel().getSelectedIndex();
-
-    	System.out.println("Username: " + data.getListOfUsernames().get(listIndex));
+    	data.setListIndex(ListOfPasswords.getSelectionModel().getSelectedIndex());
     	
-    	System.out.println("Password: " + data.getListOfPasswords().get(listIndex));
+    	Parent root = FXMLLoader.load(getClass().getResource("ShowUsernameAndPassword.fxml"));
+    	Scene showInformation = new Scene(root);
+    	Main.controller.applicationStage.setScene(showInformation);
+    	Main.controller.applicationStage.setTitle("Show Information");
     	
-    	
-    	listIndex = -1;
+    	countingIndex = -1;
     	
     	
  
