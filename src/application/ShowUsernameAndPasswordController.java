@@ -11,7 +11,7 @@ import javafx.scene.text.Text;
 
 public class ShowUsernameAndPasswordController {
 	
-	DataSingleton data = DataSingleton.getInstance();
+	CommunicateDataController data = CommunicateDataController.getInstance();
 
     @FXML
     private Text websiteGoesHere;

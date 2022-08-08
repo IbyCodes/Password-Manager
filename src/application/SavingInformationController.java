@@ -17,11 +17,13 @@ public class SavingInformationController extends AccessUsernameAndPasswordContro
 	
 	Stage applicationStage;
 	
+	int showPasswordCounter = 0;
+	
 	String websiteToSave;
 	String usernameToSave; // created instance variable to get access of the data in scene 3, so that we can append those in the list View
 	String passwordToSave; // created instance variable to get access of the data in scene 4, so that we can append those in the list View
 	
-	DataSingleton data = DataSingleton.getInstance();
+	CommunicateDataController data = CommunicateDataController.getInstance();
 
 	@FXML
 	private TextField savingUsername;
@@ -44,7 +46,16 @@ public class SavingInformationController extends AccessUsernameAndPasswordContro
 	@FXML  
 	void showPassword(ActionEvent event) throws IOException {
 		
+		if(showPasswordCounter == 0) { // making sure it doesn't keep appending the password in the show textfield
 		passwordRevealed.appendText(savingPassword.getText());
+		showPasswordCounter ++;
+		}
+		
+		else {
+			passwordRevealed.clear();
+			passwordRevealed.appendText(savingPassword.getText());
+			
+		}
 		
 		
 	}

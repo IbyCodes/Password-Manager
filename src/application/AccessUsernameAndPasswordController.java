@@ -25,7 +25,7 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
 	
 	int counter = 0;
 	
-	DataSingleton data = DataSingleton.getInstance();
+	CommunicateDataController data = CommunicateDataController.getInstance();
 
     @FXML
     private Button AddPasswordButton;

@@ -6,9 +6,12 @@ import java.util.List;
 
 // source: https://www.youtube.com/watch?v=MsgiJdf5njc&ab_channel=Randomcode
 
-public class DataSingleton {
 
-	private static final DataSingleton instance = new DataSingleton();
+// this controller will take care of communicating most data between other controllers and saving important data
+
+public class CommunicateDataController {
+
+	private static final CommunicateDataController instance = new CommunicateDataController();
 	
 	private List<String> listOfPasswords = new ArrayList<>();
 	
@@ -19,11 +22,11 @@ public class DataSingleton {
 	private int listIndex;
 	
 
-	private DataSingleton() {
+	private CommunicateDataController() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static DataSingleton getInstance() {
+	public static CommunicateDataController getInstance() {
 		return instance;
 	}
 	
