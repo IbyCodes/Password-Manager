@@ -70,9 +70,7 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
 
     }
     	
-    	
-    	
-   
+
     	
     }
     
@@ -100,11 +98,6 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
     	
     	}
     	
-    	
- 
-    	
-    	
-    	
   
 
     }
@@ -131,6 +124,17 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
 
     }
     	
+    }
+    
+    @FXML
+    void logOut(ActionEvent event) throws IOException {
+    	applicationStage = data.getApplicationStage();
+    	Parent root = FXMLLoader.load(getClass().getResource("VerifyMasterPasswordView.fxml"));  // changed the VBox root to Parent root to load the FXML document for the next scene
+		 Scene password = new Scene(root);    // creates a new scene
+		 applicationStage.setScene(password);
+		 applicationStage.setTitle("VerifyMasterPassword");
+		 applicationStage.show();			// makes the new scene visible on the screen
+   
     }
 
 	

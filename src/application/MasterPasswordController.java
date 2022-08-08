@@ -52,7 +52,7 @@ public class MasterPasswordController
 	 @FXML
 	 void PasswordCheck() throws IOException   // action method created for "Next" button                                                  
 	 {
-		 if(validPassword == false || masterPassword == null) 					// checks if the boolean variable is False that is if there are errors in setting the master password  
+		 if(validPassword == false || data.getMasterPassword() == null) 					// checks if the boolean variable is False that is if there are errors in setting the master password  
 		 {
 			 MasterPassErrorText.setText("Your master password has not been set yet!");
 		 }else if(data.forgotPasswordCounter > 0) {
@@ -71,6 +71,7 @@ public class MasterPasswordController
 			 applicationStage.setScene(password);
 			 applicationStage.setTitle("VerifyMasterPassword");
 			 applicationStage.show();			// makes the new scene visible on the screen
+			 data.setApplicationStage(applicationStage);
 			 
 
 		 }
@@ -146,13 +147,12 @@ public class MasterPasswordController
 		{
 			validPassword = false;
 			MasterPassErrorText.setText("Your master password input is not the same as the re-entry. Please try again.");
-			System.out.println(masterPassInit.getText()); // will show in console the two inputs (for security)
-			System.out.println(ReEnterMasterPass.getText()); 
+			
 		}
 
 		else
 		{
-			masterPassword = masterPassInit.getText();  // if the password is valid, we may use it for the masterpassword 
+			data.setMasterPassword(masterPassInit.getText());  // if the password is valid, we may use it for the masterpassword 
 			validPassword = true;
 			MasterPassErrorText.setText("Your master password has been set!");
 		}
@@ -162,9 +162,9 @@ public class MasterPasswordController
 		}
 	 
 	
-	public String getMasterPassword() {  // to get the master password in any other class
+	public String getMasterPassword() {  // to get the master password in any other class (in case of errors from communicatedatacointroller)
 		System.out.println(masterPassword);
-		return masterPassword;
+		return data.getMasterPassword();
 
 	}
 	
