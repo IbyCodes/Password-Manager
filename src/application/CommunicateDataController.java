@@ -3,6 +3,8 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.stage.Stage;
+
 
 // source: https://www.youtube.com/watch?v=MsgiJdf5njc&ab_channel=Randomcode
 
@@ -21,6 +23,9 @@ public class CommunicateDataController {
 	
 	private int listIndex;
 	
+	private Stage applicationStage;
+	
+	public int forgotPasswordCounter = 0;
 
 	private CommunicateDataController() {
 		// TODO Auto-generated constructor stub
@@ -65,6 +70,14 @@ public class CommunicateDataController {
 
 	public void setListIndex(int listIndex) {
 		this.listIndex = listIndex;
+	}
+
+	public Stage getApplicationStage() {
+		return applicationStage;
+	}
+
+	public void setApplicationStage(Stage applicationStage) {
+		this.applicationStage = applicationStage;
 	}
 	
 }

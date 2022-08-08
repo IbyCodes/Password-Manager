@@ -62,6 +62,26 @@ public class VerifyMasterPasswordController {
     	
     	
     }
+    
+    CommunicateDataController data = CommunicateDataController.getInstance();
+    
+    @FXML
+    void forgotYourPassword(ActionEvent event) throws IOException {
+    	
+    	data.forgotPasswordCounter ++;
+    	data.setApplicationStage(Main.controller.applicationStage);
+    	
+    	Parent root = FXMLLoader.load(getClass().getResource("MasterPasswordView.fxml"));
+		Scene createPassword = new Scene(root);
+		
+		Main.controller.applicationStage.setScene(createPassword);
+		Main.controller.applicationStage.setTitle("Create Master password");
+		
+
+    }
+    
+    
+    
 
     
 }
