@@ -14,31 +14,115 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class AccessUsernameAndPasswordController {
-	
+public class AccessUsernameAndPasswordController extends ShowUsernameAndPasswordController {
+
 	Stage applicationStage;
+	
+	int counter = 0;
+	
+	CommunicateDataController data = CommunicateDataController.getInstance();
 
     @FXML
     private Button AddPasswordButton;
 
     @FXML
-    private ListView<?> ListOfPasswords;
+    public ListView<String> ListOfPasswords;
     
+
     
     @FXML
     void AddNewPassword(ActionEvent event) throws IOException {
     	
+    	
     	Parent root = FXMLLoader.load(getClass().getResource("SavingInformationView.fxml"));
     	Scene addInformation = new Scene(root);
-    	
     	Main.controller.applicationStage.setScene(addInformation);
     	Main.controller.applicationStage.setTitle("Saving Username and Password");
     	
     }
+    
+    
+    @FXML
+    void refreshPage(ActionEvent event) {
+    	
+    	counter ++ ;
+    	
+    	if (counter>1) {
+    		System.out.println("You already refreshed the page to its most updated values.");
+    	}
+    	
+    	else {
+    	ListOfPasswords.getItems().addAll(data.getListOfWebsites());
+    	
+
+    }
+    	
+    	
+    	
+   
+    	
+    }
+    
+    @FXML
+    public void clickedOnAPassword() throws IOException { // source: https://imgur.com/a/L99ij8N
+    	
+    	
+    	
+    	int countingIndex = 0;
+    	
+    	while (!(countingIndex<0)) { // i want the listIndex to keep reseting every time something on the list is clicked
+
+    	
+    	data.setListIndex(ListOfPasswords.getSelectionModel().getSelectedIndex());
+    	
+    	Parent root = FXMLLoader.load(getClass().getResource("ShowUsernameAndPassword.fxml"));
+    	Scene showInformation = new Scene(root);
+    	Main.controller.applicationStage.setScene(showInformation);
+    	Main.controller.applicationStage.setTitle("Show Information");
+    	
+    	countingIndex = -1;
+    	
+    	
+ 
+    	
+    	
+    	
+  
+
+    }
+
+    }
+
+	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
