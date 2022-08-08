@@ -25,6 +25,8 @@ public class CommunicateDataController {
 	
 	private Stage applicationStage;
 	
+	private String masterPassword;
+	
 	public int forgotPasswordCounter = 0;
 
 	private CommunicateDataController() {
@@ -78,6 +80,14 @@ public class CommunicateDataController {
 
 	public void setApplicationStage(Stage applicationStage) {
 		this.applicationStage = applicationStage;
+	}
+
+	public String getMasterPassword() {
+		return masterPassword;
+	}
+
+	public void setMasterPassword(String masterPassword) {
+		this.masterPassword = masterPassword;
 	}
 	
 }
