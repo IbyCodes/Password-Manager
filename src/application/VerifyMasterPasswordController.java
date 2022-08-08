@@ -56,7 +56,6 @@ public class VerifyMasterPasswordController {
 
     		
     		UnlockManagerPassError.setText("The master password input is incorrect. Try again."); 
-        	System.out.println(inputToCheck);
 
     	}
     	

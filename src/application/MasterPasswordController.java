@@ -146,8 +146,8 @@ public class MasterPasswordController
 		{
 			validPassword = false;
 			MasterPassErrorText.setText("Your master password input is not the same as the re-entry. Please try again.");
-			System.out.println(masterPassInit.getText()); // for debugging
-			System.out.println(ReEnterMasterPass.getText()); // for debugging
+			System.out.println(masterPassInit.getText()); // will show in console the two inputs (for security)
+			System.out.println(ReEnterMasterPass.getText()); 
 		}
 
 		else
