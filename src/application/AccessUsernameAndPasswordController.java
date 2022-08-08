@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class AccessUsernameAndPasswordController extends ShowUsernameAndPasswordController {
@@ -37,6 +38,10 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
     public ListView<String> ListOfPasswords;
     
 
+    @FXML
+    private Text refreshedPagesText;
+
+
     
     @FXML
     void AddNewPassword(ActionEvent event) throws IOException {
@@ -56,7 +61,7 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
     	counter ++ ;
     	
     	if (counter>1) {
-    		System.out.println("You already refreshed the page to its most updated values.");
+    		refreshedPagesText.setText("You already refreshed the page to its most updated values.");
     	}
     	
     	else {
@@ -110,6 +115,12 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
     @FXML
     void DeleteAPassword(ActionEvent event) {
     	
+    	if (ListOfPasswords.getItems().isEmpty()||data.getListIndex()<0) {
+    		refreshedPagesText.setText("There is no password to delete! Please add a password first.");
+    		
+    		
+    	}
+    	else {
     	data.setListIndex(ListOfPasswords.getSelectionModel().getSelectedIndex());
     	ListOfPasswords.getItems().remove(data.getListIndex());
     	data.getListOfPasswords().remove(data.getListIndex());
@@ -119,92 +130,10 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
     	
 
     }
+    	
+    }
 
 	
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-
-    @FXML
-    void AddNewPassword(ActionEvent event) {
-		Scene mainScene = applicationStage.getScene();
-		VBox allRows = new VBox();
-		ArrayList<TextField> newPasswordTextFields = new ArrayList<TextField>();
-		
-		int rowCounter = 0;
-		
-		while(rowCounter < 3) {
-			
-			HBox newPasswordScene = new HBox();
-			if (rowCounter == 0) {
-			Label websiteLabel = new Label("Enter the website of the password: ");
-			TextField websiteTextfield = new TextField();
-			newPasswordTextFields.add(websiteTextfield);
-			newPasswordScene.getChildren().addAll(websiteLabel, websiteTextfield);
-			allRows.getChildren().add(newPasswordScene);
-			rowCounter ++;
-				
-			
-			}
-			else if(rowCounter == 1) {
-				Label usernameLabel = new Label("Enter the username of the site: ");
-				TextField usernameTextfield = new TextField();
-				newPasswordTextFields.add(usernameTextfield);
-				newPasswordScene.getChildren().addAll(usernameLabel, usernameTextfield);
-				allRows.getChildren().add(newPasswordScene);
-				rowCounter ++;
-			}
-			
-			else if(rowCounter == 2) {
-				Label passwordLabel = new Label("Enter the password of the site to save: ");
-				TextField passwordTextfield = new TextField();
-				newPasswordTextFields.add(passwordTextfield);
-				newPasswordScene.getChildren().addAll(passwordLabel, passwordTextfield);
-				allRows.getChildren().add(newPasswordScene);
-				rowCounter ++;
-		}
-		}
-    	
-		Button doneButton = new Button("Done entering information for password");
-    	 //doneButton.setOnAction(doneEvent -> calculateQuizGrade(mainScene, quizTextFields)); // return to main scene( need to figure out how)
-    	allRows.getChildren().add(doneButton);
-    	
-    	Label passwordInputErrorLabel = new Label();
-    	allRows.getChildren().add(passwordInputErrorLabel);
-    	
-    	
-    	
-    	//Scene quizScene = new Scene(allRows); // still need to figure out how to return to previous scene
-    	// applicationStage.setScene(quizScene);  // still need to figure out how to return to previous scene
-    	
-    	
-
-    }
-	*/
+   
 
 }
