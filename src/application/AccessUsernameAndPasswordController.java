@@ -102,7 +102,11 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
     @FXML
     void DeleteAPassword(ActionEvent event) {
     	
-    	
+    	data.setListIndex(ListOfPasswords.getSelectionModel().getSelectedIndex());
+    	ListOfPasswords.getItems().remove(data.getListIndex());
+    	data.getListOfPasswords().remove(data.getListIndex());
+    	data.getListOfUsernames().remove(data.getListIndex());
+    	data.getListOfWebsites().remove(data.getListIndex());
     	
     	
 
