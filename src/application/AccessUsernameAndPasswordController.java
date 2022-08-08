@@ -25,6 +25,9 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
 	
 	int counter = 0;
 	
+	
+	int countClicks = 0; // i want to make it so theres a double click before u can get to the password page
+	
 	CommunicateDataController data = CommunicateDataController.getInstance();
 
     @FXML
@@ -71,7 +74,9 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
     @FXML
     public void clickedOnAPassword() throws IOException { // source: https://imgur.com/a/L99ij8N
     	
+    	countClicks ++;
     	
+    	if (countClicks>1) {
     	
     	int countingIndex = 0;
     	
@@ -86,6 +91,9 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
     	Main.controller.applicationStage.setTitle("Show Information");
     	
     	countingIndex = -1;
+    	countClicks = 0;
+    	
+    	}
     	
     	
  
@@ -95,6 +103,20 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
   
 
     }
+
+    }
+    
+    
+    @FXML
+    void DeleteAPassword(ActionEvent event) {
+    	
+    	data.setListIndex(ListOfPasswords.getSelectionModel().getSelectedIndex());
+    	ListOfPasswords.getItems().remove(data.getListIndex());
+    	data.getListOfPasswords().remove(data.getListIndex());
+    	data.getListOfUsernames().remove(data.getListIndex());
+    	data.getListOfWebsites().remove(data.getListIndex());
+    	
+    	
 
     }
 
