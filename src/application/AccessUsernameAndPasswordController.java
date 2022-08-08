@@ -97,6 +97,16 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
     }
 
     }
+    
+    
+    @FXML
+    void DeleteAPassword(ActionEvent event) {
+    	
+    	
+    	
+    	
+
+    }
 
 	
     
