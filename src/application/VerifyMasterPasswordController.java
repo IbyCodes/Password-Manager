@@ -19,16 +19,6 @@ public class VerifyMasterPasswordController {
     private PasswordField VerifyMasterPasswordField;
 
     @FXML
-    private Button VerifyMasterPasswordButton;
-    
-    @FXML
-    void verifyPassword()
-    {
-    	
-    }
-
-    
-    @FXML
     private Text UnlockManagerPassError;
 
     
