@@ -47,16 +47,25 @@ public class MasterPasswordController
 	 @FXML
 	 private PasswordField ReEnterMasterPass;
 	 
+	 CommunicateDataController data = CommunicateDataController.getInstance();
+	 
 	 @FXML
 	 void PasswordCheck() throws IOException   // action method created for "Next" button                                                  
 	 {
 		 if(validPassword == false || masterPassword == null) 					// checks if the boolean variable is False that is if there are errors in setting the master password  
 		 {
 			 MasterPassErrorText.setText("Your master password has not been set yet!");
+		 }else if(data.forgotPasswordCounter > 0) {
+			 applicationStage = data.getApplicationStage();
+			 Parent root = FXMLLoader.load(getClass().getResource("VerifyMasterPasswordView.fxml"));  // changed the VBox root to Parent root to load the FXML document for the next scene
+			 Scene password = new Scene(root);    // creates a new scene
+			 applicationStage.setScene(password);
+			 applicationStage.setTitle("VerifyMasterPassword");
+			 applicationStage.show();			// makes the new scene visible on the screen
+			 
 		 }
 		 else										// if the password has been set and there are no errors we move to switching the scenes.
 		 {
-			 
 			 Parent root = FXMLLoader.load(getClass().getResource("VerifyMasterPasswordView.fxml"));  // changed the VBox root to Parent root to load the FXML document for the next scene
 			 Scene password = new Scene(root);    // creates a new scene
 			 applicationStage.setScene(password);
