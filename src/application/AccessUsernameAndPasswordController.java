@@ -115,6 +115,12 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
     @FXML
     void DeleteAPassword(ActionEvent event) {
     	
+    	if (ListOfPasswords.getItems().isEmpty()||data.getListIndex()<0) {
+    		refreshedPagesText.setText("There is no password to delete! Please add a password first.");
+    		
+    		
+    	}
+    	else {
     	data.setListIndex(ListOfPasswords.getSelectionModel().getSelectedIndex());
     	ListOfPasswords.getItems().remove(data.getListIndex());
     	data.getListOfPasswords().remove(data.getListIndex());
@@ -123,6 +129,8 @@ public class AccessUsernameAndPasswordController extends ShowUsernameAndPassword
     	
     	
 
+    }
+    	
     }
 
 	
