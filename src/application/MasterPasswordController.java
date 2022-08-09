@@ -5,16 +5,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*; // * indicates import EVERYTHING from that package
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * A controller class that handles the checking and setting of the master password for the password manager  
+ */
 public class MasterPasswordController 
 { // created a new class for the master password conditions (to check)
 	
@@ -49,13 +49,25 @@ public class MasterPasswordController
 	 
 	 CommunicateDataController data = CommunicateDataController.getInstance();
 	 
+	 /**
+	  * The method sets the action for the "Next-->" button 
+	  * checks if the master password that has been set or not 
+	  * If the password has been set correctly it switches the scene from scene 1 to scene 2 and redirects the user to the login page.
+	  * Source - YouTube video link - " https://www.youtube.com/watch?v=hcM-R-YOKkQ&t=362s&ab_channel=BroCode" helped us understand the concept of switching and connecting the scenes 
+	  * @throws IOException
+	  */
+	 
 	 @FXML
 	 void PasswordCheck() throws IOException   // action method created for "Next" button                                                  
 	 {
 		 if(validPassword == false || data.getMasterPassword() == null) 					// checks if the boolean variable is False that is if there are errors in setting the master password  
 		 {
 			 MasterPassErrorText.setText("Your master password has not been set yet!");
-		 }else if(data.forgotPasswordCounter > 0) {
+			 
+		 }
+		 
+		 else if(data.forgotPasswordCounter > 0) 
+		 {
 			 applicationStage = data.getApplicationStage();
 			 Parent root = FXMLLoader.load(getClass().getResource("VerifyMasterPasswordView.fxml"));  // changed the VBox root to Parent root to load the FXML document for the next scene
 			 Scene password = new Scene(root);    // creates a new scene
@@ -64,6 +76,7 @@ public class MasterPasswordController
 			 applicationStage.show();			// makes the new scene visible on the screen
 			 
 		 }
+		 
 		 else										// if the password has been set and there are no errors we move to switching the scenes.
 		 {
 			 Parent root = FXMLLoader.load(getClass().getResource("VerifyMasterPasswordView.fxml"));  // changed the VBox root to Parent root to load the FXML document for the next scene
@@ -76,6 +89,14 @@ public class MasterPasswordController
 
 		 }
 	 }
+	 
+	 /**
+	  * Sets the action of the "Submit" button
+	  * The method verifies if the conditions for setting up the master password are correct or not
+	  * If there exists any errors in setting up the master password then prints an error text in the window and asks the user to set it again
+	  * If the conditions are met the master passowrd gets set and the user can move on using the password and can eventually login into the app 
+	  * @param event
+	  */
 	 
 	 @FXML
 	 void MasterPasswordCheck (ActionEvent event)
@@ -93,20 +114,22 @@ public class MasterPasswordController
 		for (char c: passwordInput.toCharArray())
 		{
 			
-			if (Character.isUpperCase(c)) {  // to count all uppercase letters
+			if (Character.isUpperCase(c)) // to count all uppercase letters
+			{  
 				uppercaseCounter = uppercaseCounter + 1;
 			}
 			
-			if(Character.isLowerCase(c)) {  // to count all lowercase letters
+			if(Character.isLowerCase(c)) // to count all lowercase letters
+			{  
 				lowercaseCounter = lowercaseCounter + 1;
 			}
 			
-			if(!Character.isLetterOrDigit(c)) { // to count all special characters (not 100% sure if this works)
+			if(!Character.isLetterOrDigit(c)) // to count all special characters (not 100% sure if this works)
+			{ 
 				specialChar = specialChar + 1;
 			}
 			
 		}
-		
 		
 		if (passwordInput.length()<8) 
 		{  // make sure the password length is at least 8 
@@ -157,12 +180,16 @@ public class MasterPasswordController
 			MasterPassErrorText.setText("Your master password has been set!");
 		}
 		
-		
-		
-		}
+	}
 	 
+	 
+	 /**
+	  * 
+	  * @return It basically returns the Master password that has been set by the user so that we can use it in other classes.
+	  */
 	
-	public String getMasterPassword() {  // to get the master password in any other class (in case of errors from communicatedatacointroller)
+	public String getMasterPassword() // to get the master password in any other class (in case of errors from communicatedatacointroller)
+	{  
 		return data.getMasterPassword();
 
 	}
