@@ -163,7 +163,6 @@ public class MasterPasswordController
 	 
 	
 	public String getMasterPassword() {  // to get the master password in any other class (in case of errors from communicatedatacointroller)
-		System.out.println(masterPassword);
 		return data.getMasterPassword();
 
 	}
